@@ -131,7 +131,6 @@ export default function TransitionPage() {
         role: values.role || null,
         jobProfile: values.jobProfile,
         serviceNo: values.serviceNo,
-        corps: values.corps,
         certification: values.certification || "",
         qualification: values.qualification,
         place: values.place,
@@ -179,7 +178,7 @@ export default function TransitionPage() {
         {/* Header */}
         <div className=" mb-8">
           <button
-            onClick={() => router.push("/dashboard")}
+            onClick={() => router.push("/")}
             className="inline-flex items-center gap-2 cursor-pointer text-slate-400 hover:text-white text-sm font-medium mb-8 transition-all duration-200 group hover:gap-3"
           >
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-800/60 border border-slate-700/50 group-hover:border-slate-500 group-hover:bg-slate-700/60 transition-all duration-200">
@@ -486,23 +485,6 @@ export default function TransitionPage() {
                           </FormLabel>
                           <FormControl>
                             <Input {...field} placeholder="e.g. Commandant / CHM / Driver" className={inputClass} />
-                          </FormControl>
-                          <FormMessage className="text-red-400 text-xs" />
-                        </FormItem>
-                      )}
-                    />
-
-                    {/* Corps */}
-                    <FormField
-                      control={form.control}
-                      name="corps"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className={labelClass}>
-                            Corps <span className="text-[#c8a96e]">*</span>
-                          </FormLabel>
-                          <FormControl>
-                            <Input {...field} placeholder="e.g. Engineers" className={inputClass} />
                           </FormControl>
                           <FormMessage className="text-red-400 text-xs" />
                         </FormItem>

@@ -71,7 +71,7 @@ export default function HiringPage() {
       });
       const data = await res.json();
       if (!res.ok) console.warn(data.detail);
-      router.push("/dashboard");
+      router.push("/");
     } catch (err) {
       console.error(err);
     } finally {
@@ -113,7 +113,7 @@ export default function HiringPage() {
 
 
           <button
-            onClick={() => router.push("/dashboard")}
+            onClick={() => router.push("/")}
             className="inline-flex items-center gap-2 cursor-pointer text-slate-400 hover:text-white text-sm font-medium mb-8 transition-all duration-200 group hover:gap-3"
           >
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-800/60 border border-slate-700/50 group-hover:border-slate-500 group-hover:bg-slate-700/60 transition-all duration-200">

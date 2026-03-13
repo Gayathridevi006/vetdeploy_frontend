@@ -16,7 +16,6 @@ interface TransitionProfile {
   role?: string;
   jobProfile: string;
   serviceNo: string;
-  corps: string;
   certification?: string;
   qualification: string;
   place: string;
@@ -137,7 +136,6 @@ export default function ProfilePage() {
                     {[
                       { label: "Service Number", value: transitionProfile.serviceNo },
                       { label: "Rank", value: transitionProfile.rank || "N/A" },
-                      { label: "Corps", value: transitionProfile.corps },
                       { label: "Job Profile", value: transitionProfile.jobProfile },
                     ].map((item) => (
                       <div key={item.label}>
@@ -266,7 +264,7 @@ export default function ProfilePage() {
               Logout
             </button>
             <Link
-              href="/dashboard"
+              href="/"
               className="px-6 py-3 rounded-lg font-semibold text-sm border transition-all duration-200"
               style={{
                 borderColor: "rgba(200,169,110,0.3)",

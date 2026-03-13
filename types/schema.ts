@@ -45,7 +45,7 @@ export const formTransitionSchema = z.object({
   years: z.string().min(1, "Years of service is required"),
   jobProfile: z.string().min(1, "Job profile is required"),
   serviceNo: z.string().min(1, "Service number is required"),
-  corps: z.string().min(1, "Corps is required"),
+  // corps: z.string().min(1, "Corps is required"),
   certification: z.string().optional(),
   qualification: z.string().min(1, "Qualification is required"),
   institute: z.string().optional(),

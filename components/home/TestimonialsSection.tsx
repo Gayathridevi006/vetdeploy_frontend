@@ -44,7 +44,7 @@ function TestimonialCard({ testimonial, featured }: { testimonial: Testimonial; 
           <p className="font-body text-sm font-semibold" style={{ color: "#f0e6d3" }}>
             {testimonial.name}
           </p>
-          <p className="font-body text-xs text-slate-500">{testimonial.corps}</p>
+          {/* <p className="font-body text-xs text-slate-500">{testimonial.corps}</p> */}
         </div>
       </div>
     </div>

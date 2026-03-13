@@ -57,7 +57,7 @@ export default function JobsPage() {
           {/* Back to dashboard */}
 
           <Link
-            href="/dashboard"
+            href="/"
             className="text-sm text-[#c8a96e] hover:underline"
           >
             ← Dashboard

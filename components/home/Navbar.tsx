@@ -17,6 +17,10 @@ export default function Navbar() {
   pathname === "/signup" ||
   pathname === "/jobs";
 
+  const hideNavLinks =
+  pathname === "/jobs" ||
+  pathname.startsWith("/dashboard");
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -27,9 +31,10 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        background:    scrolled ? "rgba(6,13,26,0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)"         : "none",
-        borderBottom:  scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+        background: scrolled ? "rgba(255,255,255,0.85)" : "transparent",
+        backdropFilter: scrolled ? "blur(14px)" : "none",
+        borderBottom: scrolled ? "1px solid #e2e8f0" : "none",
+        boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.05)" : "none"
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -43,24 +48,29 @@ export default function Navbar() {
             height={32}
           />
 
-          <span className="font-display text-xl font-bold tracking-tight text-[#f0e6d3]">
+            <span
+              className="font-display text-xl font-bold tracking-tight transition-colors"
+              style={{ color: scrolled ? "#0f172a" : "#0f1a2e" }}
+            >
             Vetdeploy
-          </span>
+            </span>
 
         </div>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((l) => (
-            <a
-              key={l}
-              href={`#${l.toLowerCase().replace(/\s+/g, "-")}`}
-              className="nav-link font-body text-sm text-slate-300 font-medium"
-            >
-              {l}
-            </a>
-          ))}
-        </div>
+          {!hideNavLinks && (
+            <div className="hidden md:flex items-center gap-8">
+              {NAV_LINKS.map((l) => (
+                <a
+                  key={l}
+                  href={`#${l.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="nav-link font-body text-sm text-slate-600 font-medium"
+                >
+                  {l}
+                </a>
+              ))}
+            </div>
+          )}
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">

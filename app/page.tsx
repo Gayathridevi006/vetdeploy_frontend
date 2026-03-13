@@ -10,17 +10,16 @@ import HowItWorksSection from "@/components/home/HowItWorksSection";
 import Navbar from "@/components/home/Navbar";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import ContactSection from "@/components/home/ContactSection";
-
 export default function HomePage() {
   return (
     <div
-      className="min-h-screen text-white overflow-x-hidden grain"
-      style={{ background: "#060d1a", fontFamily: "'DM Sans', system-ui, sans-serif" }}
+      className="min-h-screen text-slate-900 overflow-x-hidden grain"
+      style={{ background: "#e9eff8", fontFamily: "'DM Sans', system-ui, sans-serif" }}
     >
       {/* Inject CSS animations & fonts once */}
       <GlobalStyles />
 
-      {/* Grain overlay (activated by .grain class in GlobalStyles) */}
+      {/* Grain overlay */}
       <div />
 
       <Navbar />

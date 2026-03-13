@@ -16,22 +16,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vetdeplay ministry of Defence ",
-  description: "aplication use for users in ministry of defence to manage their data and information",
+  title: "VetDeploy | Ministry of Defence Veteran Transition Platform",
+  description:
+    "VetDeploy helps military veterans transition into civilian careers by connecting them with trusted employers.",
 };
+
+
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    // suppressHydrationWarning is key here
-    <html lang="en" suppressHydrationWarning> 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          background: "#e9eff8",
+          color: "#0f172a",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
+        }}
+      >
         <AuthProvider>
           {children}
         </AuthProvider>
+
         <Toaster position="top-right" richColors />
       </body>
     </html>

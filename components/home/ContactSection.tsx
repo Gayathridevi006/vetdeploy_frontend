@@ -8,26 +8,26 @@ export default function ContactSection() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <section id="contact" className="py-24 px-6" style={{ background: "#04090f" }}>
+    <section id="contact" className="py-24 px-6" style={{ background: "#cfdef0" }}>
       <div className="max-w-5xl mx-auto text-center">
 
-        <h2 className="text-4xl font-bold mb-4" style={{ color: "#f0e6d3" }}>
+        <h2 className="text-4xl font-bold mb-4 text-slate-900">
           Contact Us
         </h2>
 
-        <p className="text-slate-400 mb-10">
+        <p className="text-slate-600 mb-10">
           Need help transitioning from military to civilian career?
         </p>
 
         {/* OPTIONS */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
 
           <Link
             href="/contact"
-            className="px-8 py-3 rounded-lg font-semibold inline-block"
+            className="px-8 py-3 rounded-lg font-semibold"
             style={{
               background: "linear-gradient(135deg,#c8a96e,#a07840)",
-              color: "#0f1a2e",
+              color: "#071831",
             }}
           >
             Contact Us
@@ -37,8 +37,9 @@ export default function ContactSection() {
             onClick={() => setShowForm(!showForm)}
             className="px-8 py-3 rounded-lg border font-semibold"
             style={{
-              borderColor: "rgba(200,169,110,0.4)",
-              color: "#c8a96e",
+              background: "linear-gradient(135deg,#c8a96e,#a07840)",
+              borderColor: "#d6dbe3",
+              color: "#1e293b",
             }}
           >
             Quick Form
@@ -48,8 +49,9 @@ export default function ContactSection() {
             href="/contact"
             className="px-8 py-3 rounded-lg border font-semibold"
             style={{
-              borderColor: "rgba(200,169,110,0.4)",
-              color: "#c8a96e",
+              background: "linear-gradient(135deg,#c8a96e,#a07840)",
+              borderColor: "#d6dbe3",
+              color: "#1e293b",
             }}
           >
             Open Full Contact Page
@@ -60,26 +62,29 @@ export default function ContactSection() {
         {/* QUICK FORM */}
         {showForm && (
           <form
-            className="max-w-xl mx-auto space-y-4 bg-slate-900 p-8 rounded-xl border"
-            style={{ borderColor: "rgba(200,169,110,0.2)" }}
+            className="max-w-xl mx-auto space-y-4 bg-white p-8 rounded-xl border"
+            style={{
+              borderColor: "#e6eaf0",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
+            }}
           >
 
             <input
               type="text"
               placeholder="Full Name"
-              className="w-full p-3 rounded bg-slate-800 border border-white/10"
+              className="w-full p-3 rounded border border-slate-200"
             />
 
             <input
               type="email"
               placeholder="Email"
-              className="w-full p-3 rounded bg-slate-800 border border-white/10"
+              className="w-full p-3 rounded border border-slate-200"
             />
 
             <textarea
               rows={4}
               placeholder="Message"
-              className="w-full p-3 rounded bg-slate-800 border border-white/10"
+              className="w-full p-3 rounded border border-slate-200"
             />
 
             <button
@@ -87,7 +92,7 @@ export default function ContactSection() {
               className="w-full py-3 rounded-lg font-semibold"
               style={{
                 background: "linear-gradient(135deg,#c8a96e,#a07840)",
-                color: "#0f1a2e",
+                color: "#071831",
               }}
             >
               Send Message
@@ -99,25 +104,43 @@ export default function ContactSection() {
         {/* CONTACT INFO */}
         <div className="grid md:grid-cols-3 gap-8 mt-16 text-left">
 
-          <div className="p-6 border border-white/10 rounded-lg">
-            <Mail className="text-[#c8a96e] mb-2" />
-            <p className="text-white font-semibold">Email</p>
-            <p className="text-slate-400">support@vetdeploy.com</p>
-          </div>
+      <div
+        className="p-7 rounded-2xl bg-white border transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        style={{
+          borderColor: "#dbe3ef",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.05)"
+        }}
+      >
+        <Mail className="text-[#c8a96e] mb-3" size={28} />
+        <p className="text-slate-900 font-semibold text-lg">Email</p>
+        <p className="text-slate-600">support@vetdeploy.com</p>
+      </div>
 
-          <div className="p-6 border border-white/10 rounded-lg">
-            <Phone className="text-[#c8a96e] mb-2" />
-            <p className="text-white font-semibold">Phone</p>
-            <p className="text-slate-400">+91 9036524348</p>
-          </div>
+      <div
+        className="p-7 rounded-2xl bg-white border transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        style={{
+          borderColor: "#dbe3ef",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.05)"
+        }}
+      >
+        <Phone className="text-[#c8a96e] mb-3" size={28} />
+        <p className="text-slate-900 font-semibold text-lg">Phone</p>
+        <p className="text-slate-600">+91 9036524348</p>
+      </div>
 
-          <div className="p-6 border border-white/10 rounded-lg">
-            <MapPin className="text-[#c8a96e] mb-2" />
-            <p className="text-white font-semibold">Location</p>
-            <p className="text-slate-400">Bangalore, India</p>
-          </div>
+      <div
+        className="p-7 rounded-2xl bg-white border transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        style={{
+          borderColor: "#dbe3ef",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.05)"
+        }}
+      >
+        <MapPin className="text-[#c8a96e] mb-3" size={28} />
+        <p className="text-slate-900 font-semibold text-lg">Location</p>
+        <p className="text-slate-600">Bangalore, India</p>
+      </div>
 
-        </div>
+    </div>
 
       </div>
     </section>
